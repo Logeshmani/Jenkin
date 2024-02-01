@@ -2,6 +2,8 @@ using HelloWorld;
 using Microsoft.AspNetCore.Mvc;
 using MVC;
 using MVC.Controllers;
+using NUnit;
+using NUnit.Framework;
 
 namespace TestProject1
 {
@@ -16,28 +18,28 @@ namespace TestProject1
         public void Test1()
         {
             Calculator c = new Calculator();
-            Assert.AreEqual(20, c.AddNums(13, 7));
+            Assert.Equals(20, c.AddNums(13, 7));
         }
 
         [Test]
         public void Test2()
         {
             Calculator c = new Calculator();
-            Assert.AreEqual(7, c.AddNums(3,4));
+           Assert.Equals(7, c.AddNums(3,4));
         }
 
         [Test]
         public void TrainerName()
         {
             DotnetBatch db = new DotnetBatch();
-            Assert.AreEqual("Logeshwaran", db.TrinerName().ToString());
+            Assert.Equals("Logeshwaran", db.TrinerName().ToString());
         }
 
         [Test]
         public void CircleArea()
         {
             HomeController hc = new();
-            Assert.AreEqual(153.9380400259m, hc.AreaofCircle(7));
+            Assert.Equals(153.9380400259m, hc.AreaofCircle(7));
         }
 
         [Test]
